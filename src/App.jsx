@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import WebsitesPage from './pages/WebsitesPage';
@@ -12,20 +11,18 @@ import { Meteors } from './components/magicui/Meteors';
 function App() {
   return (
     <Router>
-      {/* 
-          IMPORTANT: This wrapper must be 'relative' and 'overflow-x-hidden' 
+      {/*
+          IMPORTANT: This wrapper must be 'relative' and 'overflow-x-hidden'
           to ensure the background elements stay correctly positioned.
       */}
       <div className="bg-black min-h-screen text-white font-inter selection:bg-white selection:text-black relative overflow-x-hidden">
-        
+
         {/* FIXED BACKGROUND LAYER */}
         <StarField />
         <Meteors number={20} />
 
         {/* CONTENT LAYER */}
         <div className="relative z-10 flex flex-col min-h-screen">
-          <Navbar />
-          
           <main className="flex-1 w-full flex flex-col items-center justify-center">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -33,7 +30,7 @@ function App() {
               <Route path="/journey" element={<JourneyPage />} />
             </Routes>
           </main>
-          
+
           {/* Dynamic Island Dock: Stays fixed at bottom */}
           <Dock>
             <DockIcon>

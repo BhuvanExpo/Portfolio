@@ -37,13 +37,16 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.a
               key={index}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="glass-card p-8 rounded-[32px] border border-white/5 flex flex-col h-full relative group"
+              className="glass-card p-8 rounded-[32px] border border-white/5 flex flex-col h-full relative group cursor-pointer block"
             >
               <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
                 <ArrowUpRight size={20} className="text-white" />
@@ -61,7 +64,7 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>

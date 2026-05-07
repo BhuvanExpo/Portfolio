@@ -42,17 +42,20 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-[100]"
     >
       <nav className="px-10 py-10 flex justify-between items-center bg-transparent pointer-events-none">
-        {/* Bold B Logo Top Left */}
+        {/* Profile Avatar Logo Top Left */}
         <Link 
           to="/" 
           onClick={() => setIsOpen(false)}
           className="pointer-events-auto group"
         >
-          <img 
-            src="/src/assets/profile.png" 
-            alt="Bhuvan"
-            className="w-12 h-12 rounded-full border-2 border-white/20 object-cover group-hover:border-white transition-all shadow-lg"
-          />
+          <div className="relative">
+            <div className="absolute inset-0 bg-white/20 rounded-full blur-md group-hover:bg-white/40 transition-all"></div>
+            <img 
+              src="/profile.jpg" 
+              alt="Bhuvan"
+              className="relative w-12 h-12 rounded-full border-2 border-white/20 object-cover group-hover:border-white transition-all shadow-lg"
+            />
+          </div>
         </Link>
         
         {/* Three Bar Menu Toggle Top Right */}

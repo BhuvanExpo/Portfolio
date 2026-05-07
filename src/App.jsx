@@ -5,25 +5,28 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import WebsitesPage from './pages/WebsitesPage';
 import JourneyPage from './pages/JourneyPage';
-import StarField from './components/magicui/StarField';
-import Meteors from './components/magicui/Meteors';
 import { Dock, DockIcon } from './components/magicui/Dock';
+import StarField from './components/magicui/StarField';
+import { Meteors } from './components/magicui/Meteors';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
-        {/* Cinematic Background Elements */}
-        <div className="fixed inset-0 z-0 pointer-events-none">
-          <StarField />
-          <Meteors number={20} />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_70%)]" />
-        </div>
+      {/* 
+          IMPORTANT: This wrapper must be 'relative' and 'overflow-x-hidden' 
+          to ensure the background elements stay correctly positioned.
+      */}
+      <div className="bg-black min-h-screen text-white font-inter selection:bg-white selection:text-black relative overflow-x-hidden">
+        
+        {/* FIXED BACKGROUND LAYER */}
+        <StarField />
+        <Meteors number={20} />
 
+        {/* CONTENT LAYER */}
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />
           
-          <main className="flex-grow pt-24">
+          <main className="flex-1 w-full flex flex-col items-center justify-center">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/websites" element={<WebsitesPage />} />

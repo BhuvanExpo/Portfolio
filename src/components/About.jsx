@@ -5,19 +5,30 @@ const About = () => {
   return (
     <section id="about" className="py-24 bg-black px-6">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+        {/* Profile Image Container */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="w-full md:w-1/3 aspect-square glass-card rounded-[40px] border border-white/5 flex items-center justify-center p-8 overflow-hidden relative group"
+          className="w-full md:w-1/3 aspect-square glass-card rounded-[40px] border border-white/5 overflow-hidden relative group shadow-2xl"
         >
-          <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
-          <span className="text-8xl font-black text-white/10 group-hover:text-white/20 transition-colors">B</span>
-          <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 text-center">
-            <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Innovation first</p>
+          {/* Subtle Background Glow */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          
+          {/* The Profile Image */}
+          <img 
+            src="/profile.jpg" 
+            alt="Bhuvan G M" 
+            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+          />
+
+          {/* Floating Badge */}
+          <div className="absolute bottom-6 left-6 right-6 p-4 bg-black/40 backdrop-blur-xl rounded-2xl border border-white/10 text-center transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+            <p className="text-[10px] text-white uppercase tracking-widest font-bold">Innovation first</p>
           </div>
         </motion.div>
 
+        {/* Text Content */}
         <motion.div 
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -31,6 +42,7 @@ const About = () => {
           <p className="text-gray-500 leading-relaxed mb-8">
             Currently building and shipping digital products while documenting the entire journey in public. I believe in the power of transparency and building tools that solve real problems for the next generation of founders.
           </p>
+          
           <div className="flex gap-8">
             <div>
               <p className="text-2xl font-black text-white">03+</p>

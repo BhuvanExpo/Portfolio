@@ -5,23 +5,30 @@ import { ExternalLink, ArrowUpRight } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: "EcoTrack AI",
-      description: "A SaaS platform using AI to track and optimize carbon footprints for small businesses.",
-      tags: ["React", "Node.js", "AI"],
-      link: "#"
+      title: "NeX Library — Learn, Explore, Grow",
+      description: "Building the next generation digital library experience — fast, minimal, and designed for students who want knowledge without limits.",
+      tags: ["React.js", "Node.js", "AI"],
+      link: "https://gym-fawn-five.vercel.app"
     },
     {
-      title: "FounderLink",
-      description: "A networking platform specifically designed for early-stage startup founders to find co-founders.",
+      title: "PowerFit Gym — Train Hard. Stay Strong",
+      description: "Redefining fitness with modern training, smart workouts, and a community driven by growth and discipline.",
       tags: ["Next.js", "Firebase", "Tailwind"],
-      link: "#"
+      link: "https://gym-fawn-five.vercel.app"
     },
     {
-      title: "DevFlow",
-      description: "An internal tool for development teams to manage their sprint cycles and public documentation.",
+      title: "Nexa Restaurant — Modern Taste, Timeless Experience",
+      description: "Redefining restaurant experiences through modern design, premium food, and unforgettable hospitality.",
       tags: ["TypeScript", "MongoDB", "Framer"],
-      link: "#"
+      link: "https://resto-eta-two.vercel.app"
+    },
+    {
+      title: "NovaMind AI — Transforming Ideas Into Intelligence",
+      description: "Empower your business with cutting-edge artificial intelligence designed for speed, scalability, and performance.",
+      tags: ["TypeScript", "MongoDB", "Framer"],
+      link: "https://ai-saas-website-delta.vercel.app"
     }
+    
   ];
 
   return (
